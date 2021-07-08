@@ -40,8 +40,9 @@
 			"body": [
 				"As you would with any other activity plugin, you need to download it from the official moodle repository via the page ",
 				" and install it in your moodle.",
-				"You must have an Orthanc server at your disposal to securely host DICOM studies."
-			]
+				" You must have an Orthanc server at your disposal to securely host DICOM studies."
+			],
+			"legend": "Plugin parameters to configure on moodle"
 		},
 		"part2":{
 			"title": "Parameters to configure",
@@ -55,8 +56,8 @@
 					"Wado Root. Address for Wado Root."
 				],
 				"default":[
-					" By default : mymoodle.com",
-					" By default : mymoodle.com/dicom-web (if you use a reverse proxy)",
+					" By default : https://mymoodle.com",
+					" By default : https://mymoodle.com/dicom-web (if you use a reverse proxy)",
 					" By default a relative path : /wado",
 					" By default a relative path : /dicom-web",
 					" By default a relative path : /dicom-web"
@@ -71,10 +72,24 @@
 				"Creation of the activity in a courses Moodle.",
 				"Added a name for the activity, the number of the StudyInstanceUID to study and a potential description.",
 				"The 2 viewers are now accessible for this DICOM study and ready to use."
+			],
+			"legend": [
+				"Adding the Viewer DICOM Image activity to a moodle course",
+				"Parameters to configure for the activity",
+				"Result of the creation of the activity"
 			]
 			
 		},
+		
 		"part4":{
+			"title": "Result of the 2 viewers on Moodle",
+			"legend": [
+				"OHIF viewer display",
+				"StoneWebViewer viewer display"
+			]
+		},
+		
+		"part5":{
 			"title": "Tips on setting up a reverse proxy",
 			"body": "The two viewers call the address myadress.com/dicom-web, in order to retrieve the DICOM study, which is why it may be necessary to redirect requests sent to /dicom-web using a proxy to the Orthanc server."
 		}

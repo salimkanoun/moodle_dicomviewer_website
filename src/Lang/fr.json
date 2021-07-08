@@ -12,7 +12,7 @@
 	"Why": {
 		"title": "Pourquoi ?",
 		"introduction": "Le plugin DicomViewer est disponible sur la plateforme d'apprentissage en ligne (LMS) Moodle.",
-		"viewerTitle": "Il offre la possibilité de visualiser les études DICOM à l'aide de deux visualiseurs :",
+		"viewerTitle": "Il offre la possibilité de visualiser les études DICOM à l'aide de deux visionneuses :",
 		
 		"conclusion": [
 			"L'objectif principal de ce plugin est de fournir un accès à distance aux visionneuses d'études DICOM pour les étudiants en médecine dans un environnement connu. Cela favorisera l'apprentissage dans un contexte d'études en ligne.",
@@ -39,8 +39,9 @@
 			"body": [
 				"Comme vous le feriez avec n'importe quel autre plugin d'activité, vous devez le télécharger depuis le référentiel officiel de moodle via la page ",
 				" et installez-le dans votre moodle.",
-				"Vous devez disposer d'un serveur Orthanc pour héberger en toute sécurité les études DICOM."
-			]
+				" Vous devez disposer d'un serveur Orthanc pour héberger en toute sécurité les études DICOM."
+			],
+			"legend": "Paramètres du plugin à configurer sur moodle"
 		},
 		"part2":{
 			"title": "Paramètres à configurer",
@@ -54,8 +55,8 @@
 					"Wado Root. Adresse pour Wado Root."
 				],
 				"default":[
-					" Par défaut : mymoodle.com",
-					" Par défaut : mymoodle.com/dicom-web (si vous utilisez un reverse proxy)",
+					" Par défaut : https://mymoodle.com",
+					" Par défaut : https://mymoodle.com/dicom-web (si vous utilisez un reverse proxy)",
 					" Par défaut un chemin relatif : /wado",
 					" Par défaut un chemin relatif : /dicom-web",
 					" Par défaut un chemin relatif : /dicom-web"
@@ -68,12 +69,26 @@
 			"body": [
 				"Ajoutez l'étude DICOM souhaitée sur le serveur Orthanc et récupérez son StudyInstanceUID.",
 				"Création de l'activité dans un cours Moodle.",
-				"Ajout d'un nom pour l'activité, du numéro du StudyInstanceUID à étudier et d'une description potentielle.",
+				"Ajout d'un nom pour l'activité, du numéro StudyInstanceUID à étudier et d'une description potentielle.",
 				"Les 2 viewers sont désormais accessibles pour cette étude DICOM et prêts à l'emploi."
+			],
+			"legend": [
+				"Ajout de l'activité Viewer DICOM Image à un cours moodle",
+				"Paramètres à configurer pour l'activité",
+				"Résultat de la création de l'activité"
 			]
 			
 		},
+		
 		"part4":{
+			"title": "Résultat des 2 visionneuses sur Moodle",
+			"legend": [
+				"Affichage de la visionneuse OHIF",
+				"Affichage de la visionneuse StoneWebViewer"
+			]
+		},
+		
+		"part5":{
 			"title": "Conseils sur la configuration d'un proxy inverse",
 			"body": "Les deux viewers appellent l'adresse myadress.com/dicom-web, afin de récupérer l'étude DICOM, c'est pourquoi il peut être nécessaire de rediriger les requêtes envoyées à /dicom-web à l'aide d'un proxy vers le serveur Orthanc."
 		}
