@@ -5,6 +5,15 @@ import Background from '../images/background.jpg';
 import {getLanguage} from '../Lang.js';
 
 function getStyleRow(h, w) {
+    if(w < 768){
+        return{
+            backgroundImage: `url(${Background})`,
+            backgroundSize: "100%",
+            backgroundRepeat: "no-repeat",
+            height: h/2 + 'px',
+        }
+    }
+   
     return{
         backgroundImage: `url(${Background})`,
         backgroundSize: "100%",
@@ -33,11 +42,20 @@ function Header(props) {
         
     }
 
-    let style = {
-        marginLeft: "35%",
-        marginRight: "35%",
-        background: "rgba(63, 61, 86, 0.55)", 
-        padding: "2rem 3rem",
+    var style = (w) => {
+        if(w < 768){
+            return{
+                background: "rgba(63, 61, 86, 0.55)",
+                padding: "1rem 2rem",
+                marginTop: "10%",
+            }
+        }
+        return {
+            marginLeft: "35%",
+            marginRight: "35%",
+            background: "rgba(63, 61, 86, 0.55)", 
+            padding: "2rem 3rem",
+        }
     }
     let styleH2 = {
         padding: "1rem 2rem",
@@ -54,9 +72,9 @@ function Header(props) {
     return (
         <Row className="bg-dark text-light align-items-center text-center" style={getStyleRow(useWindowDimensions().height, useWindowDimensions().width)}>
             <Col>
-            <div style={style}>
+            <div id="header" style={style(useWindowDimensions().width)}>
                 <h2 id="targetHeader" style={styleH2} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>Dicom Viewer</h2>
-                <p style={styleP}>{getLanguage().Header.subtitle}</p>
+                <p id="descriptionHeader" style={styleP}>{getLanguage().Header.subtitle}</p>
             </div>
             </Col>
         </Row>
