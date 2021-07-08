@@ -1,0 +1,90 @@
+{
+    "Header": {
+        "subtitle": "Un plugin pour le système de gestion de l'apprentissage Moodle !"
+    },
+	"Navbar": [
+		"Pourquoi ?",
+		"Comment il fonctionne ?",
+		"Comment l'utiliser ?",
+		"À propos"
+	],
+	
+	"Why": {
+		"title": "Pourquoi ?",
+		"introduction": "Le plugin DicomViewer est disponible sur la plateforme d'apprentissage en ligne (LMS) Moodle.",
+		"viewerTitle": "Il offre la possibilité de visualiser les études DICOM à l'aide de deux visualiseurs :",
+		
+		"conclusion": [
+			"L'objectif principal de ce plugin est de fournir un accès à distance aux visionneuses d'études DICOM pour les étudiants en médecine dans un environnement connu. Cela favorisera l'apprentissage dans un contexte d'études en ligne.",
+			"Les enseignants pourront alors partager les études DICOM avec leurs élèves."
+		],
+		"quote": "DicomViewer est un outil pédagogique pour améliorer la transmission des connaissances."
+	
+	},
+	
+	"Work": {
+		"title": "Comment il fonctionne ?",
+		"introduction": [
+			"Le plugin DicomViewer inclut les 2 visionneuses d'étude DICOM dans leur distribution statique.",
+			"Votre serveur Orthanc est utilisé pour héberger vos études DICOM qui seront appelées par notre plugin DicomViewer."
+		],
+		"body": "Il est recommandé d'utiliser un reverse proxy reliant votre serveur Orthanc et votre site moodle (tel que Traefik, Apache, Ngnix).",
+		"legend": "Le plugin DicomViewer avec un reverse proxy"
+	},
+	
+	"Use": {
+		"title": "Comment l'utiliser",
+		"part1":{
+			"title":"Instructions générales",
+			"body": [
+				"Comme vous le feriez avec n'importe quel autre plugin d'activité, vous devez le télécharger depuis le référentiel officiel de moodle via la page ",
+				" et installez-le dans votre moodle.",
+				"Vous devez disposer d'un serveur Orthanc pour héberger en toute sécurité les études DICOM."
+			]
+		},
+		"part2":{
+			"title": "Paramètres à configurer",
+			"body": "Une fois installé, vous devez configurer les paramètres du plugin suivants dans l'administration du site :",
+			"list": {
+				"element": [
+					"Message d'origine attendu. Le message d'origine autorisé correspondant à des actions dynamiques et déclenché par une autre page Web utilisant \"window.postMessage()\".",
+					"Dicom web root. Chemin racine du serveur Web DICOM.",
+					"Wado Uri Root. Adresse pour Wado Uri Root.",
+					"Qido Root. Adresse pour Qido Root.",
+					"Wado Root. Adresse pour Wado Root."
+				],
+				"default":[
+					" Par défaut : mymoodle.com",
+					" Par défaut : mymoodle.com/dicom-web (si vous utilisez un reverse proxy)",
+					" Par défaut un chemin relatif : /wado",
+					" Par défaut un chemin relatif : /dicom-web",
+					" Par défaut un chemin relatif : /dicom-web"
+				]
+			}
+			
+		},
+		"part3":{
+			"title": "Utilisations",
+			"body": [
+				"Ajoutez l'étude DICOM souhaitée sur le serveur Orthanc et récupérez son StudyInstanceUID.",
+				"Création de l'activité dans un cours Moodle.",
+				"Ajout d'un nom pour l'activité, du numéro du StudyInstanceUID à étudier et d'une description potentielle.",
+				"Les 2 viewers sont désormais accessibles pour cette étude DICOM et prêts à l'emploi."
+			]
+			
+		},
+		"part4":{
+			"title": "Conseils sur la configuration d'un proxy inverse",
+			"body": "Les deux viewers appellent l'adresse myadress.com/dicom-web, afin de récupérer l'étude DICOM, c'est pourquoi il peut être nécessaire de rediriger les requêtes envoyées à /dicom-web à l'aide d'un proxy vers le serveur Orthanc."
+		}
+		
+	},
+	
+	"About":{
+		"title": "À propos",
+		"body": "Plugin réalisé dans le cadre d'un stage en DUT Informatique Année Spéciale à l'IUCT Oncopole par : ",
+		"person1": "Julien Bedia | Stagiaire",
+		"person2": "Salim Kanoun | Tuteur",
+		"year": "Année "
+	}
+}
