@@ -17,7 +17,7 @@ function About(props) {
                     {getLanguage().About.person1}<br/>
                     {getLanguage().About.person2}
                 </p>
-                <p>{getLanguage().About.year}</p>
+                <p>{getLanguage().About.year} 2021</p>
             </Col>
         </Row>
     );
