@@ -1,8 +1,8 @@
 import {Row, Col} from "../../node_modules/react-bootstrap";
 import useWindowDimensions from "../Fonctions/getDimension.js";
-import Background from '../images/background.jpg';
+import Background from '../assets/images/background.jpg';
 
-import {getLanguage} from '../Lang.js';
+import { useTranslation } from "react-i18next";
 
 function getStyleRow(h, w) {
     if(w < 768){
@@ -25,7 +25,8 @@ function getStyleRow(h, w) {
 }
 
 function Header(props) {
-    console.log(props.language);
+
+    const { t } = useTranslation();
 
     var mouseEnter = () => {
        
@@ -74,7 +75,7 @@ function Header(props) {
             <Col>
             <div id="header" style={style(useWindowDimensions().width)}>
                 <h2 id="targetHeader" style={styleH2} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>Dicom Viewer</h2>
-                <p id="descriptionHeader" style={styleP}>{getLanguage().Header.subtitle}</p>
+                <p id="descriptionHeader" style={styleP}>{t('Header.subtitle')}</p>
             </div>
             </Col>
         </Row>

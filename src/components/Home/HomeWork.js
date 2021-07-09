@@ -1,10 +1,11 @@
 import {Row, Col, Figure} from "../../../node_modules/react-bootstrap";
-import Diagramme from "../../images/diagramme.svg";
-import './Home.css';
-
-import {getLanguage} from '../../Lang.js';
+import Diagramme from "../../assets/images/diagramme.svg";
+import '../../assets/css/Home.css';
+import { useTranslation } from "react-i18next";
 
 function HomeWork(props) {
+
+    const { t } = useTranslation();
 
     var styleDiagramme = {
         borderRadius: "10px",
@@ -15,24 +16,24 @@ function HomeWork(props) {
     return (
         <Row id="work" className="bg-dark text-light padding">
             <Col md="3" className="text-center">
-                <h2>{getLanguage().Work.title}</h2>
+                <h2>{t('Work.title')}</h2>
                 <div className="StyleBorder">  </div>
                 <i className="fas fa-network-wired mt-3 StyleIcon"></i>
             </Col>
             <Col md="9" className="align-items-center text-left">
                 <div>
                     <p>
-                        {getLanguage().Work.introduction[0]}<br/>
-                        {getLanguage().Work.introduction[1]}
+                        {t('Work.introduction.0')}<br/>
+                        {t('Work.introduction.1')}
                     </p>
-                    <p>{getLanguage().Work.body}</p>
+                    <p>{t('Work.body')}</p>
                     
                 </div>
                 <br/>
                 <Figure>
                     <Figure.Image src={Diagramme} style={styleDiagramme} alt="Diagram reverse proxy" fluid/>
 
-                    <Figure.Caption className="text-center" style={styleLegend}>{getLanguage().Work.legend}</Figure.Caption>
+                    <Figure.Caption className="text-center" style={styleLegend}>{t('Work.legend')}</Figure.Caption>
                 </Figure>
                 
                 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row} from "../../node_modules/react-bootstrap";
-import Icon from "../images/icon_up.png";
-import IconInv from "../images/icon_up_inverse.png";
+import Icon from "../assets/images/icon_up.png";
+import IconInv from "../assets/images/icon_up_inverse.png";
 
 
 

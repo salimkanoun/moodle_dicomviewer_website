@@ -9,26 +9,53 @@ import HomeWork from './components/Home/HomeWork.js';
 import ArrowUp from './components/ArrowUp.js';
 import { useState } from 'react';
 
-import {setLanguage} from './Lang.js';
+import Lang from "./Lang.tsx";
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from 'i18next-browser-languagedetector';
+import { Language } from "./enums/Language";
+import translationEN from './i18n/en.json';
+import translationFR from './i18n/fr.json';
+
+
+let defaultLanguage = Language.FR;
+ 
+// the translations
+const resources = {
+  en: {
+    translation: translationEN
+  },
+  fr: {
+    translation: translationFR
+  }
+};
+ 
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init({
+    resources,
+    lng: defaultLanguage,
+ 
+    keySeparator: ".",  // to support nested translations
+ 
+    interpolation: {
+      escapeValue: false // react already safes from xss
+    }
+  });
+ 
+
+
 
 function App(props) {
   const [lang, setLang] = useState('EN');
 
-  const Language = ['FR', 'EN'];
-
-  var styleLang = {
-    position: "fixed",
-    top: "4rem",
-    right: "2rem",
-    height: "26px",
-    width: "50px",
-  }
-
   
-  function changeLanguage(event){
-    setLang(event.target.value);
-    setLanguage(event.target.value)
+  function changeLanguage(language){
+    setLang(language);
+    i18n.changeLanguage(language)
   }
+
 
   return (
     <div>
@@ -36,17 +63,11 @@ function App(props) {
         <Container fluid>
           <Row>
             <Container>
-              <label className="text-dark" style={styleLang}>
-                <form>
-                <select value={lang} name="language" onChange={changeLanguage}>
-                    <option value={Language[0]}>FR</option>
-                    <option value={Language[1]}>EN</option>
-                </select>
 
-                </form>
-                
-              </label>
               <Header/>
+
+              <Lang onLanguageChange = {changeLanguage} language = {lang} />
+
               <HomeWhy />
               <HomeWork />
               <HomeUse />
