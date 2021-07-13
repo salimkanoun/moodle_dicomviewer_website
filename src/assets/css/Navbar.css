@@ -1,0 +1,8 @@
+.styleLinkDefault {
+    color: white;
+    text-decoration: none;
+}
+
+.styleLinkDefault:hover {
+    color: #5CE0D8;
+}

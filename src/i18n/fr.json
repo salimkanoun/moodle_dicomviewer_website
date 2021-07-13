@@ -40,8 +40,8 @@
 				"Comme vous le feriez avec n'importe quel autre plugin d'activité, vous devez le télécharger depuis le référentiel officiel de moodle via la page ",
 				" et installez-le dans votre moodle.",
 				" Vous devez disposer d'un serveur Orthanc pour héberger en toute sécurité les études DICOM."
-			],
-			"legend": "Paramètres du plugin à configurer sur moodle"
+			]
+			
 		},
 		"part2":{
 			"title": "Paramètres à configurer",
@@ -61,7 +61,8 @@
 					" Par défaut un chemin relatif : /dicom-web",
 					" Par défaut un chemin relatif : /dicom-web"
 				]
-			}
+			},
+			"legend": "Paramètres du plugin à configurer sur moodle"
 			
 		},
 		"part3":{

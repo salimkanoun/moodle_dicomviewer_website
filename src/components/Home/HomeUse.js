@@ -44,7 +44,7 @@ function HomeUse(props) {
                 <h3 className="pt-4">{t('Use.part2.title')}</h3>
                 <p>{t('Use.part2.body')}</p>
                 <Figure className="text-center">
-                    <Figure.Caption className="text-center p-3">{t('Use.part1.legend')}</Figure.Caption>
+                    <Figure.Caption className="text-center p-3">{t('Use.part2.legend')}</Figure.Caption>
                     <Figure.Image src={ConfigurationPlugin} style={styleImage} alt="Image configuration plugin on moodle" fluid/>
                 </Figure>
                 <ul>

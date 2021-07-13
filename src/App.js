@@ -59,15 +59,12 @@ function App(props) {
 
   return (
     <div>
-        <NavigationBar />
         <Container fluid>
+          <NavigationBar />
           <Row>
             <Container>
-
               <Header/>
-
               <Lang onLanguageChange = {changeLanguage} language = {lang} />
-
               <HomeWhy />
               <HomeWork />
               <HomeUse />

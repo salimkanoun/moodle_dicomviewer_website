@@ -41,8 +41,7 @@
 				"As you would with any other activity plugin, you need to download it from the official moodle repository via the page ",
 				" and install it in your moodle.",
 				" You must have an Orthanc server at your disposal to securely host DICOM studies."
-			],
-			"legend": "Plugin parameters to configure on moodle"
+			]
 		},
 		"part2":{
 			"title": "Parameters to configure",
@@ -62,7 +61,8 @@
 					" By default a relative path : /dicom-web",
 					" By default a relative path : /dicom-web"
 				]
-			}
+			},
+			"legend": "Plugin parameters to configure on moodle"
 			
 		},
 		"part3":{
