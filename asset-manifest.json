@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/moodle_dicomviewer_website/static/css/main.8f30c24f.chunk.css",
-    "main.js": "/moodle_dicomviewer_website/static/js/main.a0fe133d.chunk.js",
-    "main.js.map": "/moodle_dicomviewer_website/static/js/main.a0fe133d.chunk.js.map",
+    "main.js": "/moodle_dicomviewer_website/static/js/main.b4b6f272.chunk.js",
+    "main.js.map": "/moodle_dicomviewer_website/static/js/main.b4b6f272.chunk.js.map",
     "runtime-main.js": "/moodle_dicomviewer_website/static/js/runtime-main.a6ae8447.js",
     "runtime-main.js.map": "/moodle_dicomviewer_website/static/js/runtime-main.a6ae8447.js.map",
     "static/css/2.455652b6.chunk.css": "/moodle_dicomviewer_website/static/css/2.455652b6.chunk.css",
@@ -26,6 +26,6 @@
     "static/css/2.455652b6.chunk.css",
     "static/js/2.6d8b4bdb.chunk.js",
     "static/css/main.8f30c24f.chunk.css",
-    "static/js/main.a0fe133d.chunk.js"
+    "static/js/main.b4b6f272.chunk.js"
   ]
 }
